@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
+import { getPath } from '@/utils/path';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -12,7 +13,7 @@ const Navbar = () => {
       <div className="container flex justify-between items-center py-2">
         <Link href="/" className="font-bold flex items-center gap-3">
           <Image 
-            src="/logo.avif" 
+            src={getPath('/logo.avif')} 
             alt="Dragon Kiss Logo" 
             width={50} 
             height={50}

@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { getPath } from '@/utils/path';
 
 const MenuPackage = ({ title, description, color }: {
   title: string;
@@ -11,7 +12,7 @@ const MenuPackage = ({ title, description, color }: {
       <div className="p-6">
         <h3 className={`font-bold text-2xl mb-4 ${color}`}>{title}</h3>
         <p className="text-gray-300 mb-4">{description}</p>
-        <Link href="/cardapio" className="inline-block mt-2 text-[#ff0000] hover:text-[#cc0000]">
+        <Link href={getPath('/cardapio')} className="inline-block mt-2 text-[#ff0000] hover:text-[#cc0000]">
           Ver detalhes →
         </Link>
       </div>
@@ -63,7 +64,7 @@ const MenuSimple = () => {
 
         <div className="mt-12 text-center">
           <Link 
-            href="/cardapio" 
+            href={getPath('/cardapio')} 
             className="inline-block px-8 py-4 text-xl font-bold text-white bg-[#ff0000] hover:bg-[#cc0000] rounded-lg transition-colors"
           >
             Ver Cardápio Completo
