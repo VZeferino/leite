@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import { getPath } from '@/utils/path';
 
 const Footer = () => {
   return (
@@ -11,7 +12,7 @@ const Footer = () => {
             {/* Logo */}
             <div className="mb-6 flex items-center gap-3">
               <Image 
-                src="/logo.avif" 
+                src={getPath('/logo.avif')}
                 alt="Dragon Kiss Logo" 
                 width={60} 
                 height={60} 

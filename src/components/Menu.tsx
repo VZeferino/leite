@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { getPath } from '@/utils/path';
 
 const MenuCard = ({ title, price, description, imageSrc }: {
   title: string;
@@ -34,25 +35,25 @@ const Menu = () => {
       title: "Beijo do Dragão",
       price: "R$ 120,00",
       description: "Corte prime finalizado na mesa com maçarico, acompanha molho especial e legumes grelhados.",
-      imageSrc: "/menu-1.jpg"
+      imageSrc: getPath("/menu-1.jpg")
     },
     {
       title: "Tomahawk Grelhado",
       price: "R$ 180,00",
       description: "Corte nobre de 600g grelhado na brasa, temperado com especiarias e ervas frescas.",
-      imageSrc: "/menu-2.jpg"
+      imageSrc: getPath("/menu-2.jpg")
     },
     {
       title: "Costelinha BBQ",
       price: "R$ 85,00",
       description: "Costelinha suína com molho barbecue da casa e finalizada no maçarico.",
-      imageSrc: "/menu-3.jpg"
+      imageSrc: getPath("/menu-3.jpg")
     },
     {
       title: "Salmão Defumado",
       price: "R$ 95,00",
       description: "Salmão defumado e grelhado, servido com risoto de limão siciliano.",
-      imageSrc: "/menu-4.jpg"
+      imageSrc: getPath("/menu-4.jpg")
     }
   ];
 

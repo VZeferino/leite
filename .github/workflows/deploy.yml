@@ -17,6 +17,7 @@ permissions:
   contents: read
   pages: write
   id-token: write
+  actions: write
 
 # Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
 # However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
@@ -54,6 +55,7 @@ jobs:
           node-version: "20"
           cache: ${{ steps.detect-package-manager.outputs.manager }}
       - name: Setup Pages
+        id: pages
         uses: actions/configure-pages@v5
         with:
           # Automaticamente injeta o basePath na configuração do Next.js e desabilita
@@ -74,7 +76,19 @@ jobs:
       - name: Install dependencies
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
       - name: Build with Next.js
+        env:
+          # Adicionar variável de ambiente com a URL base
+          BASE_PATH: "/teste/leite"
         run: ${{ steps.detect-package-manager.outputs.runner }} next build && touch out/.nojekyll
+      
+      # Novo passo para garantir que todas as imagens são copiadas
+      - name: Copy static assets
+        run: |
+          echo "Copying all static assets to the out directory..."
+          cp -r public/* out/ || true
+          echo "Listing contents of out directory:"
+          ls -la out/
+      
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:

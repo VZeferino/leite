@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import { getPath } from '@/utils/path';
 
 const Hero = () => {
   return (
@@ -7,7 +8,7 @@ const Hero = () => {
       {/* Imagem de fundo */}
       <div className="absolute inset-0 z-0">
         <Image
-          src="/hero-bg.jpg"
+          src={getPath('/hero-bg.jpg')}
           alt="Churrasco do Dragon Kiss"
           fill
           priority

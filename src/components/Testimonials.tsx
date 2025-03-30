@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { getPath } from '@/utils/path';
 
 const TestimonialCard = ({ text, name, role, imageSrc }: {
   text: string;
@@ -46,19 +47,19 @@ const Testimonials = () => {
       text: "O Beijo do Dragão é simplesmente sensacional! A carne é preparada na perfeição e a finalização na mesa com o maçarico é um espetáculo à parte. Comida e entretenimento juntos!",
       name: "Carlos Silva",
       role: "Chef Executivo",
-      imageSrc: "/testimonial-1.jpg"
+      imageSrc: getPath("/testimonial-1.jpg")
     },
     {
       text: "Melhor restaurante de carnes de São Paulo! O atendimento é impecável e os cortes são de primeira qualidade. A experiência completa vale cada centavo.",
       name: "Marina Oliveira",
       role: "Crítica Gastronômica",
-      imageSrc: "/testimonial-2.jpg"
+      imageSrc: getPath("/testimonial-2.jpg")
     },
     {
       text: "Surpreendente! A técnica japonesa de grelhar dá um sabor único às carnes. O ambiente é aconchegante e elegante. Já estou planejando voltar com amigos.",
       name: "Ricardo Mendes",
       role: "Empresário",
-      imageSrc: "/testimonial-3.jpg"
+      imageSrc: getPath("/testimonial-3.jpg")
     }
   ];
 

@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { getPath } from '@/utils/path';
 
 const About = () => {
   return (
@@ -28,7 +29,7 @@ const About = () => {
             <div className="absolute inset-0 bg-white transform -rotate-3 rounded overflow-hidden">
               <div className="relative h-full w-full">
                 <Image 
-                  src="/about-img.jpg" 
+                  src={getPath('/about-img.jpg')}
                   alt="Chefs do Dragon Kiss preparando o Beijo do Dragão" 
                   fill
                   className="object-cover"
