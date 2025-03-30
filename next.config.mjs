@@ -20,7 +20,7 @@ const nextConfig = {
   // Configuração para GitHub Pages
   // No ambiente de produção, usamos um basePath que pode ser definido via variável de ambiente
   basePath: process.env.NODE_ENV === 'production' 
-    ? (process.env.BASE_PATH || '/teste/leite') 
+    ? (process.env.BASE_PATH || '/leite') 
     : '',
   
   // Desativa a exportação de 404 para funcionar melhor no GitHub Pages

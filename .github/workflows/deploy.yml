@@ -78,7 +78,7 @@ jobs:
       - name: Build with Next.js
         env:
           # Adicionar variável de ambiente com a URL base
-          BASE_PATH: "/teste/leite"
+          BASE_PATH: "/leite"
         run: ${{ steps.detect-package-manager.outputs.runner }} next build && touch out/.nojekyll
       
       # Novo passo para garantir que todas as imagens são copiadas

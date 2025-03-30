@@ -72,4 +72,4 @@ Se o problema persistir:
 Uma vez configurado corretamente, seu site estará disponível em:
 - `https://[seu-usuario].github.io/[nome-do-repositorio]/`
 
-Por exemplo: `https://vitor_zeferino.github.io/teste/leite/` 
+Por exemplo: `https://vitor_zeferino.github.io/leite/` 

@@ -4,7 +4,7 @@
 
 // Obtém o basePath do ambiente (conforme definido no next.config.mjs)
 const basePath = process.env.NODE_ENV === 'production'
-  ? (process.env.BASE_PATH || '/teste/leite')
+  ? (process.env.BASE_PATH || '/leite')
   : '';
 
 /**
