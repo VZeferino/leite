@@ -3,11 +3,7 @@
  */
 
 // Obtém o basePath do ambiente (conforme definido no next.config.mjs)
-const basePath = process.env.NODE_ENV === 'production' 
-  ? (process.env.GITHUB_REPOSITORY 
-      ? `/${process.env.GITHUB_REPOSITORY.split('/')[1]}` 
-      : '/teste/leite')
-  : '';
+const basePath = process.env.NODE_ENV === 'production' ? '/teste/leite' : '';
 
 /**
  * Ajusta o caminho fornecido para incluir o basePath quando necessário

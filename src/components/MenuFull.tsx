@@ -1,6 +1,15 @@
 'use client';
 
 import React, { useState } from 'react';
+import Link from 'next/link';
+import { getPath } from '@/utils/path';
+
+// Interface para os itens do menu
+interface MenuItem {
+  name: string;
+  description?: string;
+  note?: string;
+}
 
 const MenuFull = () => {
   const [activeTab, setActiveTab] = useState('prata');
@@ -313,12 +322,12 @@ const MenuFull = () => {
           <p className="text-xl text-gray-300 mb-6">
             Entre em contato conosco para solicitar um orçamento personalizado para seu evento!
           </p>
-          <a 
-            href="/#contato"
+          <Link 
+            href={getPath("/#contato")} 
             className="inline-block px-8 py-4 text-xl font-bold text-white bg-[#ff0000] hover:bg-[#cc0000] rounded-lg transition-colors"
           >
             Solicitar Orçamento
-          </a>
+          </Link>
         </div>
       </div>
     </section>
@@ -326,7 +335,11 @@ const MenuFull = () => {
 };
 
 // Componente para exibir um item do menu com título e possivelmente destacado
-const MenuItemGroup = ({ title, isHighlighted = false, isNote = false }) => {
+const MenuItemGroup = ({ title, isHighlighted = false, isNote = false }: {
+  title: string;
+  isHighlighted?: boolean;
+  isNote?: boolean;
+}) => {
   return (
     <div className={`py-2 ${isNote ? 'text-gray-400 italic text-center mt-6' : ''}`}>
       <p className={`
@@ -340,7 +353,11 @@ const MenuItemGroup = ({ title, isHighlighted = false, isNote = false }) => {
 };
 
 // Componente para uma seção de menu com título e itens
-const MenuSection = ({ title, subtitle, items }) => {
+const MenuSection = ({ title, subtitle, items }: {
+  title: string;
+  subtitle?: string;
+  items: MenuItem[];
+}) => {
   return (
     <div className="bg-gray-900 rounded-xl shadow-lg p-8">
       <h3 className="text-2xl font-bold mb-4 text-[#ff0000]">{title}</h3>
