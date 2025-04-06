@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./globals.css";
+import { AOSInitializer } from "../components/AOSInitializer";
+import { getPath } from "@/utils/path";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -12,6 +14,10 @@ export const metadata: Metadata = {
   title: "Dragon Kiss | Experiência Gastronômica",
   description: "Conheça nossas chamas e o verdadeiro 'Beijo do Dragão'",
   authors: [{ name: "Dragon Kiss Eventos" }],
+  icons: {
+    icon: getPath('/logo.avif'),
+    apple: getPath('/logo.avif'),
+  },
   openGraph: {
     title: "Dragon Kiss | Experiência Gastronômica",
     description: "Conheça nossas chamas e o verdadeiro 'Beijo do Dragão'",
@@ -35,7 +41,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="pt-BR" suppressHydrationWarning>
+      <head>
+        <link rel="icon" href={getPath('/logo.avif')} />
+        <link rel="apple-touch-icon" href={getPath('/logo.avif')} />
+      </head>
       <body className={`${poppins.variable} font-sans`} suppressHydrationWarning>
+        <AOSInitializer />
         {children}
       </body>
     </html>

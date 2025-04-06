@@ -22,16 +22,16 @@ const Hero = () => {
       {/* Conteúdo do Hero */}
       <div className="relative z-20 container h-full flex flex-col justify-center text-white pt-20">
         <div className="max-w-3xl">
-          <h1 className="text-4xl md:text-6xl font-bold mb-4">
+          <h1 className="text-4xl md:text-6xl font-bold mb-4" data-aos="fade-up" data-aos-delay="100">
             CONHEÇA NOSSAS CHAMAS
           </h1>
-          <h2 className="text-3xl md:text-5xl font-bold mb-8">
+          <h2 className="text-3xl md:text-5xl font-bold mb-8" data-aos="fade-up" data-aos-delay="200">
             O &ldquo;BEIJO DO DRAGÃO&rdquo;
           </h2>
-          <p className="text-lg md:text-xl mb-8 max-w-2xl">
+          <p className="text-lg md:text-xl mb-8 max-w-2xl" data-aos="fade-up" data-aos-delay="300">
             Experimente o verdadeiro sabor da brasa em cortes selecionados, preparados com técnicas únicas que ressaltam o melhor de cada ingrediente.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4">
+          <div className="flex flex-col sm:flex-row gap-4" data-aos="fade-up" data-aos-delay="400">
             <Link 
               href="#menu" 
               className="btn btn-primary text-center"
@@ -39,17 +39,17 @@ const Hero = () => {
               Ver Cardápio
             </Link>
             <Link 
-              href="#reserva" 
+              href="#contato" 
               className="btn border border-white text-center hover:bg-white hover:text-[#9f0000] transition-colors"
             >
-              Fazer Reserva
+              Agendar Evento
             </Link>
           </div>
         </div>
       </div>
       
       {/* Seta para scroll */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce z-20">
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce z-20" data-aos="fade-up" data-aos-delay="500">
         <svg 
           xmlns="http://www.w3.org/2000/svg" 
           fill="none" 

@@ -80,7 +80,7 @@ const Footer = () => {
               </li>
               <li>
                 <Link href="#reserva" className="text-gray-400 hover:text-white">
-                  Reservas
+                  Agendar Evento
                 </Link>
               </li>
               <li>

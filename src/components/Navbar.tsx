@@ -4,9 +4,12 @@ import { useState } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import { getPath } from '@/utils/path';
+import { usePathname } from 'next/navigation';
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const pathname = usePathname();
+  const isHomePage = pathname === '/';
 
   return (
     <nav className="fixed top-0 left-0 right-0 bg-[#9f0000] text-white z-50">
@@ -24,22 +27,22 @@ const Navbar = () => {
 
         {/* Menu para desktop */}
         <div className="hidden md:flex gap-8 items-center">
-          <Link href="#sobre" className="hover:text-gray-200 transition-colors">
+          <Link href={isHomePage ? "#sobre" : "/#sobre"} className="hover:text-gray-200 transition-colors">
             Sobre
           </Link>
-          <Link href="#menu" className="hover:text-gray-200 transition-colors">
+          <Link href={isHomePage ? "#menu" : "/#menu"} className="hover:text-gray-200 transition-colors">
             Cardápio
           </Link>
-          <Link href="#local" className="hover:text-gray-200 transition-colors">
-            Localização
+          <Link href="/galeria" className="hover:text-gray-200 transition-colors">
+            Galeria
           </Link>
-          <Link href="#contato" className="hover:text-gray-200 transition-colors">
+          <Link href={isHomePage ? "#contato" : "/#contato"} className="hover:text-gray-200 transition-colors">
             Contato
           </Link>
           <Link 
-            href="#reserva" 
+            href={isHomePage ? "#contato" : "/#contato"} 
             className="px-5 py-2 border border-white rounded hover:bg-white hover:text-[#9f0000] transition-colors">
-            Fazer Reserva
+            Agendar Evento
           </Link>
         </div>
 
@@ -65,39 +68,46 @@ const Navbar = () => {
         <div className="md:hidden bg-[#9f0000] pb-4">
           <div className="container flex flex-col gap-4">
             <Link 
-              href="#sobre" 
+              href={isHomePage ? "#sobre" : "/#sobre"} 
               className="hover:text-gray-200 transition-colors"
               onClick={() => setIsMenuOpen(false)}
             >
               Sobre
             </Link>
             <Link 
-              href="#menu" 
+              href={isHomePage ? "#menu" : "/#menu"} 
               className="hover:text-gray-200 transition-colors"
               onClick={() => setIsMenuOpen(false)}
             >
               Cardápio
             </Link>
             <Link 
-              href="#local" 
+              href="/galeria" 
+              className="hover:text-gray-200 transition-colors"
+              onClick={() => setIsMenuOpen(false)}
+            >
+              Galeria
+            </Link>
+            <Link 
+              href={isHomePage ? "#local" : "/#local"} 
               className="hover:text-gray-200 transition-colors"
               onClick={() => setIsMenuOpen(false)}
             >
               Localização
             </Link>
             <Link 
-              href="#contato" 
+              href={isHomePage ? "#contato" : "/#contato"} 
               className="hover:text-gray-200 transition-colors"
               onClick={() => setIsMenuOpen(false)}
             >
               Contato
             </Link>
             <Link 
-              href="#reserva" 
+              href={isHomePage ? "#contato" : "/#contato"} 
               className="px-5 py-2 border border-white rounded text-center hover:bg-white hover:text-[#9f0000] transition-colors"
               onClick={() => setIsMenuOpen(false)}
             >
-              Fazer Reserva
+              Agendar Evento
             </Link>
           </div>
         </div>

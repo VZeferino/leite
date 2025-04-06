@@ -1,13 +1,14 @@
 import Link from 'next/link';
 import { getPath } from '@/utils/path';
 
-const MenuPackage = ({ title, description, color }: {
+const MenuPackage = ({ title, description, color, index }: {
   title: string;
   description: string;
   color: string;
+  index: number;
 }) => {
   return (
-    <div className="bg-gray-900 rounded-lg shadow-md overflow-hidden">
+    <div className="bg-gray-900 rounded-lg shadow-md overflow-hidden" data-aos="fade-up" data-aos-delay={index * 100}>
       <div className="p-6">
         <h3 className={`font-bold text-2xl mb-4 ${color}`}>{title}</h3>
         <p className="text-gray-300 mb-4">{description}</p>
@@ -41,7 +42,7 @@ const MenuSimple = () => {
   return (
     <section id="menu" className="py-20 bg-black text-white">
       <div className="container px-4">
-        <div className="text-center mb-16">
+        <div className="text-center mb-16" data-aos="fade-up">
           <h2 className="text-4xl md:text-5xl font-bold mb-4 text-[#ff0000]">
             Nosso Cardápio
           </h2>
@@ -57,11 +58,12 @@ const MenuSimple = () => {
               title={item.title}
               description={item.description}
               color={item.color}
+              index={index}
             />
           ))}
         </div>
 
-        <div className="mt-12 text-center">
+        <div className="mt-12 text-center" data-aos="fade-up" data-aos-delay="300">
           <Link 
             href={getPath('/cardapio')} 
             className="inline-block px-8 py-4 text-xl font-bold text-white bg-[#ff0000] hover:bg-[#cc0000] rounded-lg transition-colors"

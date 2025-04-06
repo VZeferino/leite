@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { getPath } from '@/utils/path';
+import Link from 'next/link';
 
 const About = () => {
   return (
@@ -19,10 +20,18 @@ const About = () => {
               quando passa pelo fogo. Aprecie nossa técnica japonesa de grelhar e conheça o verdadeiro
               &ldquo;Beijo do Dragão&rdquo; - nosso corte especial finalizado na mesa com um maçarico.
             </p>
-            <p className="text-gray-700">
+            <p className="text-gray-700 mb-6">
               Venha nos visitar e experimente o sabor que tem conquistado São Paulo 
               e que já se tornou referência para os amantes de boa gastronomia.
             </p>
+            <Link 
+              href="/historia" 
+              className="inline-block px-6 py-3 bg-[#9f0000] text-white font-bold rounded-lg hover:bg-[#800000] transition-colors"
+              data-aos="fade-up"
+              data-aos-delay="100"
+            >
+              Saiba mais sobre nossa história
+            </Link>
           </div>
           <div className="md:w-1/2 relative h-80 md:h-96 w-full">
             <div className="absolute inset-0 bg-[#9f0000] transform rotate-3 rounded"></div>

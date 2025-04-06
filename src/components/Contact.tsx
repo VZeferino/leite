@@ -1,8 +1,65 @@
+'use client';
+
+import { useState, FormEvent } from 'react';
+
 const Contact = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    message: ''
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<{
+    type: 'success' | 'error';
+    message: string;
+  } | null>(null);
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = async (e: FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    
+    try {
+      // Aqui você pode adicionar a lógica para enviar o formulário
+      // Por exemplo, usando Formspree ou outro serviço
+      
+      // Simulando um envio bem-sucedido
+      await new Promise(resolve => setTimeout(resolve, 1000));
+      
+      setSubmitStatus({
+        type: 'success',
+        message: 'Mensagem enviada com sucesso! Entraremos em contato em breve.'
+      });
+      
+      // Limpar o formulário após o envio
+      setFormData({
+        name: '',
+        email: '',
+        phone: '',
+        message: ''
+      });
+    } catch (error) {
+      setSubmitStatus({
+        type: 'error',
+        message: 'Ocorreu um erro ao enviar a mensagem. Por favor, tente novamente ou entre em contato através do WhatsApp.'
+      });
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <section id="contato" className="py-20 bg-white">
       <div className="container px-4">
-        <div className="text-center mb-16">
+        <div className="text-center mb-16" data-aos="fade-up">
           <h2 className="text-4xl md:text-5xl font-bold mb-6 text-[#9f0000]">
             Entre em Contato
           </h2>
@@ -13,9 +70,9 @@ const Contact = () => {
 
         <div className="grid md:grid-cols-2 gap-8 md:gap-12">
           {/* Informações de Contato */}
-          <div className="bg-gray-100 p-6 sm:p-8 md:p-10 rounded-lg shadow-lg border border-gray-200">
+          <div className="bg-gray-100 p-6 sm:p-8 md:p-10 rounded-lg shadow-lg border border-gray-200" data-aos="fade-right">
             <h3 className="text-2xl font-bold mb-6 md:mb-8 text-[#9f0000]">Informações de Contato</h3>
-            <ul className="space-y-6 md:space-y-8">
+            <ul className="space-y-6">
               <li className="flex items-start gap-4">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
@@ -120,29 +177,52 @@ const Contact = () => {
                 </svg>
                 <div>
                   <span className="text-lg md:text-xl font-semibold block mb-1 text-gray-800">Instagram:</span>
-                  <a 
-                    href="https://www.instagram.com/dragonkiss.eventos/" 
-                    target="_blank" 
-                    rel="noopener noreferrer"
-                    className="text-base md:text-lg text-gray-700 hover:text-[#9f0000] hover:underline"
-                  >
-                    @dragonkiss.eventos
-                  </a>
+                  <div className="space-y-1">
+                    <a 
+                      href="https://www.instagram.com/dragonkiss.eventos/" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-base md:text-lg text-gray-700 hover:text-[#9f0000] hover:underline block"
+                    >
+                      @dragonkiss.eventos
+                    </a>
+                    <a 
+                      href="https://www.instagram.com/chefjoaoleite/" 
+                      target="_blank" 
+                      rel="noopener noreferrer"
+                      className="text-base md:text-lg text-gray-700 hover:text-[#9f0000] hover:underline block"
+                    >
+                      @chefjoaoleite
+                    </a>
+                  </div>
                 </div>
               </li>
             </ul>
           </div>
 
           {/* Formulário de Contato */}
-          <div className="bg-gray-100 p-6 sm:p-8 md:p-10 rounded-lg shadow-lg border border-gray-200">
-            <h3 className="text-2xl font-bold mb-6 md:mb-8 text-[#9f0000]">Envie-nos uma mensagem</h3>
-            <form className="space-y-5 md:space-y-6">
+          <div className="bg-gray-100 p-6 sm:p-8 md:p-10 rounded-lg shadow-lg border border-gray-200" data-aos="fade-left">
+            <h3 className="text-2xl font-bold mb-6 md:mb-8 text-[#9f0000]">Envie uma Mensagem</h3>
+            {submitStatus && (
+              <div className={`p-4 mb-6 rounded-lg ${
+                submitStatus.type === 'success' 
+                  ? 'bg-green-100 text-green-800' 
+                  : 'bg-red-100 text-red-800'
+              }`}>
+                {submitStatus.message}
+              </div>
+            )}
+            <form onSubmit={handleSubmit} className="space-y-6">
               <div>
                 <label htmlFor="name" className="block mb-2 text-lg md:text-xl font-medium text-gray-800">Nome</label>
                 <input 
                   type="text" 
                   id="name" 
-                  className="w-full px-4 sm:px-5 py-3 text-base md:text-lg border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#9f0000] focus:border-transparent"
+                  name="name"
+                  value={formData.name}
+                  onChange={handleChange}
+                  required
+                  className="w-full px-4 sm:px-5 py-3 text-base md:text-lg text-gray-900 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#9f0000] focus:border-transparent"
                   placeholder="Seu nome"
                 />
               </div>
@@ -151,7 +231,11 @@ const Contact = () => {
                 <input 
                   type="email" 
                   id="email" 
-                  className="w-full px-4 sm:px-5 py-3 text-base md:text-lg border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#9f0000] focus:border-transparent"
+                  name="email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                  className="w-full px-4 sm:px-5 py-3 text-base md:text-lg text-gray-900 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#9f0000] focus:border-transparent"
                   placeholder="Seu e-mail"
                 />
               </div>
@@ -160,24 +244,37 @@ const Contact = () => {
                 <input 
                   type="tel" 
                   id="phone" 
-                  className="w-full px-4 sm:px-5 py-3 text-base md:text-lg border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#9f0000] focus:border-transparent"
+                  name="phone"
+                  value={formData.phone}
+                  onChange={handleChange}
+                  required
+                  className="w-full px-4 sm:px-5 py-3 text-base md:text-lg text-gray-900 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#9f0000] focus:border-transparent"
                   placeholder="Seu telefone"
                 />
               </div>
               <div>
-                <label htmlFor="message" className="block mb-2 text-lg md:text-xl font-medium text-gray-800">Mensagem</label>
+                <label htmlFor="message" className="block mb-2 text-lg md:text-xl font-medium text-gray-800">Conte sobre seu evento</label>
                 <textarea 
                   id="message" 
+                  name="message"
                   rows={4}
-                  className="w-full px-4 sm:px-5 py-3 text-base md:text-lg border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#9f0000] focus:border-transparent"
-                  placeholder="Escreva sua mensagem aqui..."
+                  value={formData.message}
+                  onChange={handleChange}
+                  required
+                  className="w-full px-4 sm:px-5 py-3 text-base md:text-lg text-gray-900 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#9f0000] focus:border-transparent"
+                  placeholder="Descreva os detalhes do seu evento..."
                 ></textarea>
               </div>
               <button 
                 type="submit"
-                className="w-full px-6 sm:px-8 py-3 sm:py-4 text-lg md:text-xl font-bold text-white bg-[#9f0000] hover:bg-[#7e0000] rounded-lg transition-colors duration-300"
+                disabled={isSubmitting}
+                className={`w-full px-6 sm:px-8 py-3 sm:py-4 text-lg md:text-xl font-bold text-white rounded-lg transition-colors duration-300 ${
+                  isSubmitting 
+                    ? 'bg-gray-500 cursor-not-allowed' 
+                    : 'bg-[#9f0000] hover:bg-[#7e0000]'
+                }`}
               >
-                Enviar Mensagem
+                {isSubmitting ? 'Enviando...' : 'Enviar Mensagem'}
               </button>
             </form>
           </div>
