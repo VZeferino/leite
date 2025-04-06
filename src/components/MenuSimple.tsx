@@ -65,7 +65,7 @@ const MenuSimple = () => {
 
         <div className="mt-12 text-center" data-aos="fade-up" data-aos-delay="300">
           <Link 
-            href={getPath('/cardapio')} 
+            href="/cardapio" 
             className="inline-block px-8 py-4 text-xl font-bold text-white bg-[#ff0000] hover:bg-[#cc0000] rounded-lg transition-colors"
           >
             Ver Cardápio Completo

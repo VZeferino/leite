@@ -83,7 +83,7 @@ const Menu = () => {
 
         <div className="mt-12 text-center">
           <Link 
-            href={getPath('/cardapio')} 
+            href="/cardapio" 
             className="px-8 py-4 text-lg font-bold text-white bg-[#9f0000] hover:bg-[#7e0000] rounded-lg transition-colors duration-300"
           >
             Ver Cardápio Completo
