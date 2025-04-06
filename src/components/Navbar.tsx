@@ -89,13 +89,6 @@ const Navbar = () => {
               Galeria
             </Link>
             <Link 
-              href={isHomePage ? "#local" : "/#local"} 
-              className="hover:text-gray-200 transition-colors"
-              onClick={() => setIsMenuOpen(false)}
-            >
-              Localização
-            </Link>
-            <Link 
               href={isHomePage ? "#contato" : "/#contato"} 
               className="hover:text-gray-200 transition-colors"
               onClick={() => setIsMenuOpen(false)}

@@ -12,7 +12,7 @@ const MenuPackage = ({ title, description, color, index }: {
       <div className="p-6">
         <h3 className={`font-bold text-2xl mb-4 ${color}`}>{title}</h3>
         <p className="text-gray-300 mb-4">{description}</p>
-        <Link href={getPath('/cardapio')} className="inline-block mt-2 text-[#ff0000] hover:text-[#cc0000]">
+        <Link href="/cardapio" className="inline-block mt-2 text-[#ff0000] hover:text-[#cc0000]">
           Ver detalhes →
         </Link>
       </div>
