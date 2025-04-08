@@ -1,18 +1,19 @@
 import Link from 'next/link';
 import { getPath } from '@/utils/path';
 
-const MenuPackage = ({ title, description, color, index }: {
+const MenuPackage = ({ title, description, color, index, slug }: {
   title: string;
   description: string;
   color: string;
   index: number;
+  slug: string;
 }) => {
   return (
     <div className="bg-gray-900 rounded-lg shadow-md overflow-hidden" data-aos="fade-up" data-aos-delay={index * 100}>
       <div className="p-6">
         <h3 className={`font-bold text-2xl mb-4 ${color}`}>{title}</h3>
         <p className="text-gray-300 mb-4">{description}</p>
-        <Link href="/cardapio" className="inline-block mt-2 text-[#ff0000] hover:text-[#cc0000]">
+        <Link href={`/cardapio#${slug}`} className="inline-block mt-2 text-[#ff0000] hover:text-[#cc0000]">
           Ver detalhes →
         </Link>
       </div>
@@ -25,17 +26,20 @@ const MenuSimple = () => {
     {
       title: "Menu Prata",
       description: "Pacote essencial para eventos, incluindo picanha, contrafilé, linguiças, acompanhamentos e toda estrutura necessária.",
-      color: "text-gray-100",
+      color: "text-gray-300",
+      slug: "prata",
     },
     {
       title: "Menu Ouro",
       description: "Experiência premium com picanha premium, variedade de linguiças, acompanhamentos especiais e mais opções para seu evento.",
       color: "text-yellow-400",
+      slug: "ouro",
     },
     {
       title: "Menu Platina",
       description: "Nossa experiência mais exclusiva com carnes nobres importadas, cordeiro, acompanhamentos especiais, sobremesas e bebidas.",
-      color: "text-gray-300",
+      color: "text-white",
+      slug: "platina",
     }
   ];
 
@@ -59,6 +63,7 @@ const MenuSimple = () => {
               description={item.description}
               color={item.color}
               index={index}
+              slug={item.slug}
             />
           ))}
         </div>

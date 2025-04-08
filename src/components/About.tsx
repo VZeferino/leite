@@ -9,20 +9,15 @@ const About = () => {
         <div className="flex flex-col md:flex-row gap-12 items-center">
           <div className="md:w-1/2">
             <h2 className="text-3xl md:text-4xl font-bold mb-6 text-[#9f0000]">
-              Nossa História
+              Sobre
             </h2>
             <p className="text-gray-700 mb-6">
-              Aqui em São Paulo, a paixão encontra o ingrediente e o resultado é o Dragon Kiss. 
-              Nos tornamos Campeões Regionais de Grelhados em eventos gastronômicos diversos.
+              Aqui em São Paulo, as pessoas esperam o inesperado - e o espetacular. E na Dragon Kiss, nós também. Criamos experiências únicas, nos especializando em eventos sociais, corporativos e casamentos. Em resumo, qualquer evento que você possa imaginar. Com as habilidades de um time talentoso que já viu e fez de tudo, entregamos momentos deliciosamente alegres.
             </p>
             <p className="text-gray-700 mb-6">
-              Na nossa casa, qualquer corte de carne é transformado em poesia 
-              quando passa pelo fogo. Aprecie nossa técnica japonesa de grelhar e conheça o verdadeiro
-              &ldquo;Beijo do Dragão&rdquo; - nosso corte especial finalizado na mesa com um maçarico.
-            </p>
-            <p className="text-gray-700 mb-6">
-              Venha nos visitar e experimente o sabor que tem conquistado São Paulo 
-              e que já se tornou referência para os amantes de boa gastronomia.
+              Fundado em 2024, o Dragon Kiss conta com uma equipe de profissionais apaixonados pela arte da cozinha, com anos de experiência em serviços de catering, buffet e churrasco, atendendo São Paulo e região. 
+              Nosso Chef João Leite combina técnicas clássicas e modernas, inspirando-se em tradições culinárias de todo o mundo. Sua paixão pela arte culinária se reflete em pratos que unem sabor, criatividade e autenticidade. Nos orgulhamos ao entender os elementos únicos de cada evento e sempre encontraremos maneiras de exceder as suas expectativas. 
+              Cada detalhe é cuidadosamente pensado para garantir uma execução impecável, transformando seu evento em uma verdadeira experiência gastronômica.
             </p>
             <Link 
               href="/historia" 
@@ -30,7 +25,7 @@ const About = () => {
               data-aos="fade-up"
               data-aos-delay="100"
             >
-              Saiba mais sobre nossa história
+              Conheça mais sobre nossa história
             </Link>
           </div>
           <div className="md:w-1/2 relative h-80 md:h-96 w-full">
@@ -39,7 +34,7 @@ const About = () => {
               <div className="relative h-full w-full">
                 <Image 
                   src={getPath('/about-img.jpg')}
-                  alt="Chefs do Dragon Kiss preparando o Beijo do Dragão" 
+                  alt="Evento Dragon Kiss" 
                   fill
                   className="object-cover"
                 />

@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
 import { getPath } from '@/utils/path';
 
@@ -13,6 +13,16 @@ interface MenuItem {
 
 const MenuFull = () => {
   const [activeTab, setActiveTab] = useState('prata');
+
+  // Efeito para ler o hash da URL e definir a aba ativa na montagem do componente
+  useEffect(() => {
+    const hash = window.location.hash.substring(1); // Pega o hash sem o #
+    const validTabs = ['prata', 'ouro', 'platina', 'acompanhamentos', 'adicionais'];
+    if (hash && validTabs.includes(hash)) {
+      setActiveTab(hash);
+    }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []); // Executa apenas uma vez na montagem
 
   return (
     <section className="py-20 bg-black text-white">
@@ -90,7 +100,7 @@ const MenuFull = () => {
           {activeTab === 'prata' && (
             <div data-aos="fade-up" data-aos-delay="200">
               <div className="mb-8">
-                <h3 className="text-2xl md:text-3xl font-bold mb-4 text-[#ff0000]">Menu Prata</h3>
+                <h3 className="text-2xl md:text-3xl font-bold mb-4 text-gray-300">Menu Prata</h3>
                 <p className="text-gray-300 text-lg">
                   Pacote essencial para eventos, incluindo picanha, contrafilé, linguiças, acompanhamentos e toda estrutura necessária.
                 </p>
@@ -133,7 +143,7 @@ const MenuFull = () => {
           {activeTab === 'ouro' && (
             <div data-aos="fade-up" data-aos-delay="200">
               <div className="mb-8">
-                <h3 className="text-2xl md:text-3xl font-bold mb-4 text-[#ff0000]">Menu Ouro</h3>
+                <h3 className="text-2xl md:text-3xl font-bold mb-4 text-yellow-400">Menu Ouro</h3>
                 <p className="text-gray-300 text-lg">
                   Experiência premium com picanha premium, variedade de linguiças, acompanhamentos especiais e mais opções para seu evento.
                 </p>
@@ -179,7 +189,7 @@ const MenuFull = () => {
           {activeTab === 'platina' && (
             <div data-aos="fade-up" data-aos-delay="200">
               <div className="mb-8">
-                <h3 className="text-2xl md:text-3xl font-bold mb-4 text-[#ff0000]">Menu Platina</h3>
+                <h3 className="text-2xl md:text-3xl font-bold mb-4 text-white">Menu Platina</h3>
                 <p className="text-gray-300 text-lg">
                   Nossa experiência mais exclusiva com carnes nobres importadas, cordeiro, acompanhamentos especiais, sobremesas e bebidas.
                 </p>
@@ -322,11 +332,34 @@ const MenuFull = () => {
               <div className="mb-8">
                 <h3 className="text-2xl md:text-3xl font-bold mb-4 text-[#ff0000]">Adicionais</h3>
                 <p className="text-gray-300 text-lg">
-                  Complemente seu evento com nossas opções adicionais de molhos, sobremesas e bebidas.
+                  Complemente seu evento com nossas opções adicionais de molhos, sobremesas, bebidas e opções veganas.
                 </p>
               </div>
               
               <div className="space-y-12">
+                <MenuSection 
+                  title="MENU VEGANO"
+                  subtitle="Em nossa busca de satisfazer cada cliente, montamos um menu com opções veganas que pode ser adicionado a qualquer menu existente."
+                  items={[
+                    {
+                      name: "ESPETINHO DE LEGUMES",
+                      description: "Com cogumelos paris, pimentões, cebola roxa, abobrinha e abacaxi, é regado em um tempero especial da casa."
+                    },
+                    {
+                      name: "MILHO TORRADO",
+                      description: "Torrado, crocante e delicioso, é regado na manteiga antes de servir."
+                    },
+                    {
+                      name: "REPOLHO NA MANTEIGA",
+                      description: "Macio por dentro e tostado por fora."
+                    },
+                    {
+                      name: "FATIAS DE BERINJELA",
+                      description: "Deixada no sal para tirar o amargor e depois grelhada com limão, sal e ervas."
+                    }
+                  ]}
+                />
+
                 <MenuSection 
                   title="MOLHOS ESPECIAIS"
                   subtitle="Molhos especiais para realçar o sabor das carnes."
