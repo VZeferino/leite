@@ -16,9 +16,10 @@ export function getPath(path: string): string {
     return path;
   }
   
-  // Garante que o caminho comece com /
+  // Remove barras duplicadas e garante que o caminho comece com /
   const normalizedPath = path.startsWith('/') ? path : `/${path}`;
+  const cleanPath = normalizedPath.replace(/\/+/g, '/');
   
   // Retorna o caminho com o basePath
-  return `${basePath}${normalizedPath}`;
+  return `${basePath}${cleanPath}`;
 } 

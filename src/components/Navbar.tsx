@@ -21,6 +21,7 @@ const Navbar = () => {
             width={50} 
             height={50}
             className="max-h-12 w-auto" 
+            priority
           />
           <span className="text-xl md:text-2xl font-bold">DRAGON KISS</span>
         </Link>

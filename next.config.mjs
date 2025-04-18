@@ -7,7 +7,6 @@ const nextConfig = {
   },
   output: 'export',
   images: {
-    domains: ['images.unsplash.com'],
     unoptimized: true,
     remotePatterns: [
       {
@@ -25,6 +24,11 @@ const nextConfig = {
   
   // Desativa a exportação de 404 para funcionar melhor no GitHub Pages
   trailingSlash: true,
+  
+  // Configuração adicional para assets estáticos
+  assetPrefix: process.env.NODE_ENV === 'production' 
+    ? (process.env.BASE_PATH || '/leite') 
+    : '',
 };
 
 export default nextConfig; 
