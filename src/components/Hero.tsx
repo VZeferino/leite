@@ -8,7 +8,7 @@ const Hero = () => {
       {/* Imagem de fundo */}
       <div className="absolute inset-0 z-0">
         <Image
-          src={getPath('/hero-bg.jpg')}
+          src={getPath('/pro/IMG_3903.JPG')}
           alt="Churrasco do Dragon Kiss"
           fill
           priority
@@ -28,7 +28,7 @@ const Hero = () => {
           <h2 className="text-3xl md:text-5xl font-bold mb-8" data-aos="fade-up" data-aos-delay="200">
             O &ldquo;BEIJO DO DRAGÃO&rdquo;
           </h2>
-          <p className="text-lg md:text-xl mb-8 max-w-2xl" data-aos="fade-up" data-aos-delay="300">
+          <p className="text-lg md:text-xl mb-8 max-w-2xl text-justify" data-aos="fade-up" data-aos-delay="300">
             Experimente o verdadeiro sabor da brasa em cortes selecionados, preparados com técnicas únicas que ressaltam o melhor de cada ingrediente.
           </p>
           <div className="flex flex-col sm:flex-row gap-4" data-aos="fade-up" data-aos-delay="400">

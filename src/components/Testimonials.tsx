@@ -19,7 +19,7 @@ const TestimonialCard = ({ text, name, role, imageSrc }: {
           />
         </div>
         <div>
-          <h3 className="font-bold text-lg">{name}</h3>
+          <h3 className="font-bold text-lg text-[#9f0000]">{name}</h3>
           <p className="text-gray-500">{role}</p>
         </div>
       </div>
@@ -44,22 +44,22 @@ const TestimonialCard = ({ text, name, role, imageSrc }: {
 const Testimonials = () => {
   const testimonials = [
     {
-      text: "O Beijo do Dragão é simplesmente sensacional! A carne é preparada na perfeição e a finalização na mesa com o maçarico é um espetáculo à parte. Comida e entretenimento juntos!",
-      name: "Carlos Silva",
-      role: "Chef Executivo",
+      text: "Contratei para o meu aniversário e o serviço foi excelente, a comida maravilhosa e todos saíram extremamente satisfeitos da minha festa, até os vegetarianos amaram.",
+      name: "Livia Volpe",
+      role: "Cliente",
       imageSrc: getPath("/testimonial-1.jpg")
     },
     {
-      text: "Melhor restaurante de carnes de São Paulo! O atendimento é impecável e os cortes são de primeira qualidade. A experiência completa vale cada centavo.",
-      name: "Marina Oliveira",
-      role: "Crítica Gastronômica",
-      imageSrc: getPath("/testimonial-2.jpg")
+      text: "Experiência super positiva, organização, higiene, sabor, cordialidade e excelente apresentação. Super recomendo!!!",
+      name: "Katia Franco",
+      role: "Cliente",
+      imageSrc: "https://ui-avatars.com/api/?name=K+F&background=9f0000&color=fff&size=100"
     },
     {
-      text: "Surpreendente! A técnica japonesa de grelhar dá um sabor único às carnes. O ambiente é aconchegante e elegante. Já estou planejando voltar com amigos.",
-      name: "Ricardo Mendes",
-      role: "Empresário",
-      imageSrc: getPath("/testimonial-3.jpg")
+      text: "Equipe super atenciosos e prestativos, comida saborosa e bem preparada, gostei muito",
+      name: "Aureni Couto",
+      role: "Cliente",
+      imageSrc: "https://ui-avatars.com/api/?name=A+C&background=9f0000&color=fff&size=100"
     }
   ];
 
@@ -85,6 +85,20 @@ const Testimonials = () => {
               imageSrc={testimonial.imageSrc}
             />
           ))}
+        </div>
+
+        <div className="text-center mt-12">
+          <a 
+            href="https://www.google.com/search?sca_esv=125590fea1908471&si=APYL9bs7Hg2KMLB-4tSoTdxuOx8BdRvHbByC_AuVpNyh0x2KzYQrvZvUiOOelDr1E2vT3Xz15Yl9OkFA6dTvv26fYXh4QtCK9y9a2f8ZAEkhCyqh8VlhqtvaAvhkre3xT0G7iadlWDMse4DtHGNDzxMGrnrgw_6mjdlcXngPeivaosIUkiWchos%3D&q=Dragon+Kiss+%E2%80%93+Buffet+e+Churrasco+a+Domic%C3%ADlio+Reviews"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 px-6 py-3 bg-[#9f0000] text-white font-bold rounded-lg hover:bg-[#800000] transition-colors"
+          >
+            Ver mais avaliações no Google
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.5} stroke="currentColor" className="w-5 h-5">
+              <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 6H5.25A2.25 2.25 0 003 8.25v10.5A2.25 2.25 0 005.25 21h10.5A2.25 2.25 0 0018 18.75V10.5m-10.5 6L21 3m0 0h-5.25M21 3v5.25" />
+            </svg>
+          </a>
         </div>
       </div>
     </section>

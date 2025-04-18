@@ -11,13 +11,8 @@ const About = () => {
             <h2 className="text-3xl md:text-4xl font-bold mb-6 text-[#9f0000]">
               Sobre
             </h2>
-            <p className="text-gray-700 mb-6">
+            <p className="text-gray-700 mb-6 text-justify">
               Aqui em São Paulo, as pessoas esperam o inesperado - e o espetacular. E na Dragon Kiss, nós também. Criamos experiências únicas, nos especializando em eventos sociais, corporativos e casamentos. Em resumo, qualquer evento que você possa imaginar. Com as habilidades de um time talentoso que já viu e fez de tudo, entregamos momentos deliciosamente alegres.
-            </p>
-            <p className="text-gray-700 mb-6">
-              Fundado em 2024, o Dragon Kiss conta com uma equipe de profissionais apaixonados pela arte da cozinha, com anos de experiência em serviços de catering, buffet e churrasco, atendendo São Paulo e região. 
-              Nosso Chef João Leite combina técnicas clássicas e modernas, inspirando-se em tradições culinárias de todo o mundo. Sua paixão pela arte culinária se reflete em pratos que unem sabor, criatividade e autenticidade. Nos orgulhamos ao entender os elementos únicos de cada evento e sempre encontraremos maneiras de exceder as suas expectativas. 
-              Cada detalhe é cuidadosamente pensado para garantir uma execução impecável, transformando seu evento em uma verdadeira experiência gastronômica.
             </p>
             <Link 
               href="/historia" 
@@ -33,7 +28,7 @@ const About = () => {
             <div className="absolute inset-0 bg-white transform -rotate-3 rounded overflow-hidden">
               <div className="relative h-full w-full">
                 <Image 
-                  src={getPath('/about-img.jpg')}
+                  src={getPath('/pro/IMG_6494.jpg')}
                   alt="Evento Dragon Kiss" 
                   fill
                   className="object-cover"

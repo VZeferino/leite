@@ -26,7 +26,7 @@ export default function GaleriaPage() {
             <div className="bg-gray-800 rounded-lg overflow-hidden" data-aos="fade-up">
               <div className="relative h-64">
                 <Image 
-                  src={getPath('/menu-1.jpg')} 
+                  src={getPath('/carnes cruas/ribeye.jpg')} 
                   alt="Carnes Premium" 
                   fill
                   className="object-cover"
@@ -35,29 +35,30 @@ export default function GaleriaPage() {
               <div className="p-6">
                 <h2 className="text-2xl font-bold mb-3 text-[#ff0000]">Carnes Premium</h2>
                 <p className="text-gray-300">
-                  Nossas carnes são selecionadas com rigor, garantindo a melhor qualidade. 
-                  Desde a picanha premium até o cordeiro, cada corte é preparado com técnicas 
-                  especiais para realçar o sabor natural.
+                  Selecionamos apenas os melhores cortes premium, como Ribeye, T-bone e Picanha Angus. 
+                  Cada peça é cuidadosamente escolhida e preparada para garantir a máxima suculência e sabor, 
+                  trazendo a verdadeira experiência da alta gastronomia para seu evento.
                 </p>
               </div>
             </div>
             
-            {/* Técnica do Beijo do Dragão */}
+            {/* Picanha Grelhada */}
             <div className="bg-gray-800 rounded-lg overflow-hidden" data-aos="fade-up" data-aos-delay="100">
               <div className="relative h-64">
                 <Image 
-                  src={getPath('/menu-2.jpg')} 
-                  alt="Técnica do Beijo do Dragão" 
+                  src={getPath('/carnes grelhadas/picanha.jpg')} 
+                  alt="Picanha Grelhada" 
                   fill
                   className="object-cover"
                 />
               </div>
               <div className="p-6">
-                <h2 className="text-2xl font-bold mb-3 text-[#ff0000]">Técnica do Beijo do Dragão</h2>
+                <h2 className="text-2xl font-bold mb-3 text-[#ff0000]">Picanha Perfeita</h2>
                 <p className="text-gray-300">
-                  Nossa técnica exclusiva combina temperatura, tempo e temperos especiais. 
-                  O "Beijo do Dragão" é finalizado na mesa com um maçarico, criando uma 
-                  experiência visual e gustativa inesquecível.
+                  Nossa picanha é preparada no ponto exato, com uma crosta dourada e 
+                  suculenta por dentro. Grelhada lentamente para preservar todos os 
+                  sucos e sabores naturais da carne, é servida em fatias generosas que 
+                  derretem na boca.
                 </p>
               </div>
             </div>
@@ -66,78 +67,85 @@ export default function GaleriaPage() {
             <div className="bg-gray-800 rounded-lg overflow-hidden" data-aos="fade-up" data-aos-delay="200">
               <div className="relative h-64">
                 <Image 
-                  src={getPath('/menu-3.jpg')} 
-                  alt="Acompanhamentos" 
+                  src={getPath('/preparos especiais/espeto de legumes.jpg')} 
+                  alt="Espetinhos Vegetarianos" 
                   fill
                   className="object-cover"
                 />
               </div>
               <div className="p-6">
-                <h2 className="text-2xl font-bold mb-3 text-[#ff0000]">Acompanhamentos</h2>
+                <h2 className="text-2xl font-bold mb-3 text-[#ff0000]">Opções Vegetarianas</h2>
                 <p className="text-gray-300">
-                  Nossos acompanhamentos são preparados com ingredientes frescos e técnicas 
-                  tradicionais. Do arroz branco à farofa, cada item complementa perfeitamente 
-                  as carnes grelhadas.
+                  Nossos espetinhos vegetarianos são preparados com legumes frescos e coloridos, 
+                  cuidadosamente selecionados. Abobrinha, pimentão, cogumelos, cebola roxa e 
+                  outros vegetais grelhados na medida certa, mantendo o sabor e a crocância 
+                  ideais para uma experiência saudável e deliciosa.
                 </p>
               </div>
             </div>
             
-            {/* Eventos */}
+            {/* Preparos Especiais */}
             <div className="bg-gray-800 rounded-lg overflow-hidden" data-aos="fade-up">
               <div className="relative h-64">
                 <Image 
-                  src={getPath('/menu-4.jpg')} 
-                  alt="Eventos" 
+                  src={getPath('/preparos especiais/cordeiro.jpg')} 
+                  alt="Preparos Especiais" 
                   fill
                   className="object-cover"
                 />
               </div>
               <div className="p-6">
-                <h2 className="text-2xl font-bold mb-3 text-[#ff0000]">Eventos</h2>
+                <h2 className="text-2xl font-bold mb-3 text-[#ff0000]">Preparos Especiais</h2>
                 <p className="text-gray-300">
-                  Oferecemos uma experiência completa para seu evento, com equipe profissional, 
-                  estrutura de grelhados e atendimento personalizado. Desde casamentos até 
-                  confraternizações empresariais.
+                  Nossos preparos especiais incluem o suculento carré de cordeiro, 
+                  costelinha suína ao molho barbecue, e o exclusivo frango jamaicano 
+                  com especiarias. Todos acompanhados de molhos artesanais como nosso 
+                  chimichurri tradicional argentino, preparado com ervas frescas e 
+                  temperos selecionados.
                 </p>
               </div>
             </div>
             
-            {/* Molhos Especiais */}
+            {/* Acompanhamentos Tradicionais */}
             <div className="bg-gray-800 rounded-lg overflow-hidden" data-aos="fade-up" data-aos-delay="100">
               <div className="relative h-64">
                 <Image 
-                  src={getPath('/about-img.jpg')} 
+                  src={getPath('/eventos/acompanhamentos 1.jpg')} 
+                  alt="Acompanhamentos Tradicionais" 
+                  fill
+                  className="object-cover"
+                />
+              </div>
+              <div className="p-6">
+                <h2 className="text-2xl font-bold mb-3 text-[#ff0000]">Acompanhamentos Tradicionais</h2>
+                <p className="text-gray-300">
+                  Nossa seleção inclui a tradicional farofa artesanal preparada na hora, 
+                  vinagrete caseiro com legumes frescos picados na medida certa, e a 
+                  cremosa maionese de batata com bacon crocante e ovos cozidos. Cada 
+                  acompanhamento é preparado com ingredientes selecionados para complementar 
+                  perfeitamente suas carnes favoritas.
+                </p>
+              </div>
+            </div>
+            
+            {/* Molhos */}
+            <div className="bg-gray-800 rounded-lg overflow-hidden" data-aos="fade-up" data-aos-delay="200">
+              <div className="relative h-64">
+                <Image 
+                  src={getPath('/eventos/molhos.jpg')} 
                   alt="Molhos Especiais" 
                   fill
                   className="object-cover"
                 />
               </div>
               <div className="p-6">
-                <h2 className="text-2xl font-bold mb-3 text-[#ff0000]">Molhos Especiais</h2>
+                <h2 className="text-2xl font-bold mb-3 text-[#ff0000]">Molhos Artesanais</h2>
                 <p className="text-gray-300">
-                  Nossos molhos são preparados com ingredientes selecionados e técnicas 
-                  exclusivas. Do molho vermelho ao chimichurri, cada receita foi desenvolvida 
-                  para realçar o sabor das carnes.
-                </p>
-              </div>
-            </div>
-            
-            {/* Sobremesas */}
-            <div className="bg-gray-800 rounded-lg overflow-hidden" data-aos="fade-up" data-aos-delay="200">
-              <div className="relative h-64">
-                <Image 
-                  src={getPath('/hero-bg.jpg')} 
-                  alt="Sobremesas" 
-                  fill
-                  className="object-cover"
-                />
-              </div>
-              <div className="p-6">
-                <h2 className="text-2xl font-bold mb-3 text-[#ff0000]">Sobremesas</h2>
-                <p className="text-gray-300">
-                  Para finalizar com chave de ouro, nossas sobremesas são preparadas com 
-                  ingredientes de alta qualidade. Do pudim de leite à banana caramelizada, 
-                  cada doce é uma experiência única.
+                  Nossa seleção de molhos artesanais inclui o autêntico chimichurri 
+                  argentino com ervas frescas e azeite, e o clássico molho borderlaise, 
+                  preparado com vinho tinto e especiarias. Cada molho é cuidadosamente 
+                  elaborado para realçar o sabor das nossas carnes grelhadas, criando 
+                  harmonias perfeitas em cada mordida.
                 </p>
               </div>
             </div>
@@ -148,14 +156,14 @@ export default function GaleriaPage() {
             <h2 className="text-3xl font-bold mb-8 text-center text-white" data-aos="fade-up">Momentos Especiais</h2>
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-4">
               {[
-                { src: '/testimonial-1.jpg', alt: 'Momento Dragon Kiss 1' },
-                { src: '/testimonial-2.jpg', alt: 'Momento Dragon Kiss 2' },
-                { src: '/testimonial-3.jpg', alt: 'Momento Dragon Kiss 3' },
-                { src: '/menu-1.jpg', alt: 'Momento Dragon Kiss 4' },
-                { src: '/menu-2.jpg', alt: 'Momento Dragon Kiss 5' },
-                { src: '/menu-3.jpg', alt: 'Momento Dragon Kiss 6' },
-                { src: '/menu-4.jpg', alt: 'Momento Dragon Kiss 7' },
-                { src: '/about-img.jpg', alt: 'Momento Dragon Kiss 8' }
+                { src: '/eventos/mesa de buffet 1.jpg', alt: 'Mesa de Buffet Completa' },
+                { src: '/eventos/mesa de buffet 2.jpg', alt: 'Apresentação do Buffet' },
+                { src: '/eventos/mesa de buffet 3.jpg', alt: 'Buffet Decorado' },
+                { src: '/eventos/mesa de buffet 4.jpg', alt: 'Buffet em Evento' },
+                { src: '/eventos/saladas 1.jpg', alt: 'Saladas Especiais' },
+                { src: '/eventos/saladas 2.jpg', alt: 'Variedade de Saladas' },
+                { src: '/eventos/carnes rechaud 1.jpg', alt: 'Carnes no Rechaud' },
+                { src: '/eventos/feijao tropeiro.jpg', alt: 'Feijão Tropeiro Especial' }
               ].map((img, index) => (
                 <div key={index} className="relative aspect-square rounded-lg overflow-hidden" data-aos="fade-up" data-aos-delay={index * 50}>
                   <Image 
@@ -175,17 +183,15 @@ export default function GaleriaPage() {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
               <div className="bg-gray-700 p-6 rounded-lg">
                 <p className="text-gray-300 italic mb-4">
-                  "O Dragon Kiss transformou nosso casamento em uma experiência gastronômica inesquecível. 
-                  Os convidados não paravam de elogiar as carnes e o atendimento foi impecável."
+                  "Simplesmente o melhor churrasco para curtir com amigos e família! Atendimento impecável, comida deliciosa e um clima super agradável. Recomendo de olhos fechados!"
                 </p>
-                <p className="text-white font-bold">Maria e João Silva</p>
+                <p className="text-white font-bold">Vitor Queiroz</p>
               </div>
               <div className="bg-gray-700 p-6 rounded-lg">
                 <p className="text-gray-300 italic mb-4">
-                  "Contratamos o Dragon Kiss para nossa confraternização empresarial e superou todas as expectativas. 
-                  Profissionalismo, qualidade e sabor incomparável."
+                  "Ótimo profissional e qualidade impecável, super recomendo"
                 </p>
-                <p className="text-white font-bold">Carlos Oliveira - Diretor de Marketing</p>
+                <p className="text-white font-bold">Cristiane dos Santos</p>
               </div>
             </div>
           </div>

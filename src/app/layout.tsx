@@ -15,8 +15,8 @@ export const metadata: Metadata = {
   description: "Conheça nossas chamas e o verdadeiro 'Beijo do Dragão'",
   authors: [{ name: "Dragon Kiss Eventos" }],
   icons: {
-    icon: getPath('/logo.avif'),
-    apple: getPath('/logo.avif'),
+    icon: '/logo.ico',
+    apple: '/logo.ico',
   },
   openGraph: {
     title: "Dragon Kiss | Experiência Gastronômica",
@@ -42,8 +42,8 @@ export default function RootLayout({
   return (
     <html lang="pt-BR" suppressHydrationWarning>
       <head>
-        <link rel="icon" href={getPath('/logo.avif')} />
-        <link rel="apple-touch-icon" href={getPath('/logo.avif')} />
+        <link rel="icon" href="/logo.ico" />
+        <link rel="apple-touch-icon" href="/logo.ico" />
       </head>
       <body className={`${poppins.variable} font-sans`} suppressHydrationWarning>
         <AOSInitializer />
