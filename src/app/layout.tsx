@@ -18,6 +18,11 @@ export const metadata: Metadata = {
     icon: '/logo.ico',
     apple: '/logo.ico',
   },
+  viewport: {
+    width: 'device-width',
+    initialScale: 1,
+    maximumScale: 1,
+  },
   openGraph: {
     title: "Dragon Kiss | Experiência Gastronômica",
     description: "Conheça nossas chamas e o verdadeiro 'Beijo do Dragão'",
@@ -45,7 +50,7 @@ export default function RootLayout({
         <link rel="icon" href="/logo.ico" />
         <link rel="apple-touch-icon" href="/logo.ico" />
       </head>
-      <body className={`${poppins.variable} font-sans`} suppressHydrationWarning>
+      <body className={`${poppins.variable} font-sans overflow-x-hidden`} suppressHydrationWarning>
         <AOSInitializer />
         {children}
       </body>

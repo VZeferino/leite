@@ -5,7 +5,7 @@ import { getPath } from "@/utils/path";
 
 export default function HistoriaPage() {
   return (
-    <main>
+    <main className="overflow-x-hidden">
       <Navbar />
       
       <section className="py-8 md:py-16 bg-gray-900">

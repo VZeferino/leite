@@ -5,7 +5,7 @@ import { getPath } from "@/utils/path";
 
 export default function GaleriaPage() {
   return (
-    <main>
+    <main className="overflow-x-hidden">
       <Navbar />
       <div className="pt-20"></div> {/* Espaço para o navbar fixo */}
       
