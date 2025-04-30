@@ -2,10 +2,8 @@
  * Utilitário para ajustar caminhos de arquivos de acordo com o basePath configurado
  */
 
-// Obtém o basePath do ambiente (conforme definido no next.config.mjs)
-const basePath = process.env.NODE_ENV === 'production'
-  ? (process.env.BASE_PATH || '/leite')
-  : '';
+// Agora que estamos usando um domínio personalizado, não precisamos mais do basePath
+const basePath = '';
 
 /**
  * Ajusta o caminho fornecido para incluir o basePath quando necessário
@@ -20,6 +18,6 @@ export function getPath(path: string): string {
   const normalizedPath = path.startsWith('/') ? path : `/${path}`;
   const cleanPath = normalizedPath.replace(/\/+/g, '/');
   
-  // Retorna o caminho com o basePath
+  // Retorna o caminho com o basePath (que agora está vazio)
   return `${basePath}${cleanPath}`;
 } 

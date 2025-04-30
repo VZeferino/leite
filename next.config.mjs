@@ -16,19 +16,15 @@ const nextConfig = {
     ],
   },
   
-  // Configuração para GitHub Pages
-  // No ambiente de produção, usamos um basePath que pode ser definido via variável de ambiente
-  basePath: process.env.NODE_ENV === 'production' 
-    ? (process.env.BASE_PATH || '/leite') 
-    : '',
+  // Configuração para GitHub Pages com domínio personalizado
+  // Como agora estamos usando um domínio personalizado, não precisamos mais do basePath
+  basePath: '',
   
   // Desativa a exportação de 404 para funcionar melhor no GitHub Pages
   trailingSlash: true,
   
   // Configuração adicional para assets estáticos
-  assetPrefix: process.env.NODE_ENV === 'production' 
-    ? (process.env.BASE_PATH || '/leite') 
-    : '',
+  assetPrefix: '',
 };
 
 export default nextConfig; 
