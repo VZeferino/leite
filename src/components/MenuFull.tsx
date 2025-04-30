@@ -184,7 +184,6 @@ const MenuFull = () => {
                       { name: "PICANHA PREMIUM" },
                       { name: "BIFE ANCHO" },
                       { name: "FRALDINHA" },
-                      { name: "LINGUIÇA CUIABANA" },
                       { name: "LINGUIÇA TOSCANA" },
                       { name: "COXINHA DE FRANGO" },
                       { name: "ASINHA DE FRANGO" }
