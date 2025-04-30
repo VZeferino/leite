@@ -116,7 +116,7 @@ const Contact = () => {
                 <div>
                   <span className="text-lg md:text-xl font-semibold block mb-1 text-gray-800">Telefone:</span>
                   <a 
-                    href="https://api.whatsapp.com/send/?phone=5511950407707&text=Oi%21+Quero+fazer+um+evento+com+voc%C3%AA&type=phone_number&app_absent=0" 
+                    href="https://api.whatsapp.com/send/?phone=5511912884404&text=Oi%21+Quero+fazer+um+evento+com+voc%C3%AA&type=phone_number&app_absent=0" 
                     target="_blank"
                     rel="noopener noreferrer"
                     className="text-base md:text-lg text-gray-700 hover:text-[#9f0000] hover:underline flex items-center"

@@ -1,8 +1,14 @@
+'use client';
+
 import Link from 'next/link';
 import Image from 'next/image';
 import { getPath } from '@/utils/path';
+import { usePathname } from 'next/navigation';
 
 const Footer = () => {
+  const pathname = usePathname();
+  const isHomePage = pathname === '/';
+
   return (
     <footer className="bg-[#1a1a1a] text-white">
       <div className="container py-16">
@@ -45,7 +51,7 @@ const Footer = () => {
               
               {/* WhatsApp Icon */}
               <a 
-                href="https://api.whatsapp.com/send/?phone=5511950407707&text=Oi%21+Quero+fazer+um+evento+com+voc%C3%AA&type=phone_number&app_absent=0" 
+                href="https://api.whatsapp.com/send/?phone=5511912884404&text=Oi%21+Quero+fazer+um+evento+com+voc%C3%AA&type=phone_number&app_absent=0" 
                 target="_blank" 
                 rel="noopener noreferrer"
                 className="text-gray-400 hover:text-white"
@@ -69,22 +75,22 @@ const Footer = () => {
             <h3 className="text-xl font-bold mb-6">Links Rápidos</h3>
             <ul className="space-y-3">
               <li>
-                <Link href="#sobre" className="text-gray-400 hover:text-white">
+                <Link href={isHomePage ? "#sobre" : "/#sobre"} className="text-gray-400 hover:text-white">
                   Sobre Nós
                 </Link>
               </li>
               <li>
-                <Link href="#menu" className="text-gray-400 hover:text-white">
+                <Link href={isHomePage ? "#menu" : "/#menu"} className="text-gray-400 hover:text-white">
                   Cardápio
                 </Link>
               </li>
               <li>
-                <Link href="#reserva" className="text-gray-400 hover:text-white">
+                <Link href={isHomePage ? "#reserva" : "/#reserva"} className="text-gray-400 hover:text-white">
                   Agendar Evento
                 </Link>
               </li>
               <li>
-                <Link href="#contato" className="text-gray-400 hover:text-white">
+                <Link href={isHomePage ? "#contato" : "/#contato"} className="text-gray-400 hover:text-white">
                   Contato
                 </Link>
               </li>
@@ -111,7 +117,7 @@ const Footer = () => {
                   />
                 </svg>
                 <a 
-                  href="https://api.whatsapp.com/send/?phone=5511950407707&text=Oi%21+Quero+fazer+um+evento+com+voc%C3%AA&type=phone_number&app_absent=0" 
+                  href="https://api.whatsapp.com/send/?phone=5511912884404&text=Oi%21+Quero+fazer+um+evento+com+voc%C3%AA&type=phone_number&app_absent=0" 
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-gray-400 hover:text-white flex items-center gap-1"
