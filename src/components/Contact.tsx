@@ -28,24 +28,31 @@ const Contact = () => {
     setIsSubmitting(true);
     
     try {
-      // Aqui você pode adicionar a lógica para enviar o formulário
-      // Por exemplo, usando Formspree ou outro serviço
-      
-      // Simulando um envio bem-sucedido
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      
-      setSubmitStatus({
-        type: 'success',
-        message: 'Mensagem enviada com sucesso! Entraremos em contato em breve.'
+      // Usando Formspree para o envio do formulário
+      const response = await fetch('https://formspree.io/f/meogepyr', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
       });
       
-      // Limpar o formulário após o envio
-      setFormData({
-        name: '',
-        email: '',
-        phone: '',
-        message: ''
-      });
+      if (response.ok) {
+        setSubmitStatus({
+          type: 'success',
+          message: 'Mensagem enviada com sucesso! Entraremos em contato em breve.'
+        });
+        
+        // Limpar o formulário após o envio
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          message: ''
+        });
+      } else {
+        throw new Error('Falha no envio');
+      }
     } catch (error) {
       setSubmitStatus({
         type: 'error',

@@ -12,18 +12,20 @@ const Navbar = () => {
   const isHomePage = pathname === '/';
 
   return (
-    <nav className="fixed top-0 left-0 right-0 bg-[#9f0000] text-white z-50">
-      <div className="container flex justify-between items-center py-2">
-        <Link href="/" className="font-bold flex items-center gap-3">
-          <Image 
-            src={getPath('/logo.avif')} 
-            alt="Dragon Kiss Logo" 
-            width={50} 
-            height={50}
-            className="max-h-12 w-auto" 
-            priority
-          />
-          <span className="text-xl md:text-2xl font-bold">DRAGON KISS</span>
+    <nav className="bg-[#9f0000] text-white z-50">
+      <div className="px-4 flex items-center justify-between h-14">
+        <Link href="/" className="flex items-center">
+          <div className="flex items-center">
+            <Image 
+              src={getPath('/logo.avif')} 
+              alt="Dragon Kiss Logo" 
+              width={32} 
+              height={32}
+              className="w-8 h-8 md:w-[50px] md:h-[50px]" 
+              priority
+            />
+            <span className="ml-2 text-sm md:text-2xl font-bold whitespace-nowrap">DRAGON KISS</span>
+          </div>
         </Link>
 
         {/* Menu para desktop */}
@@ -49,8 +51,9 @@ const Navbar = () => {
 
         {/* Botão menu mobile */}
         <button 
-          className="md:hidden text-white"
+          className="flex md:hidden items-center justify-center w-8 h-8 flex-shrink-0"
           onClick={() => setIsMenuOpen(!isMenuOpen)}
+          aria-label="Menu"
         >
           {isMenuOpen ? (
             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" className="w-6 h-6">
@@ -66,39 +69,39 @@ const Navbar = () => {
 
       {/* Menu mobile */}
       {isMenuOpen && (
-        <div className="md:hidden bg-[#9f0000] pb-4">
-          <div className="container flex flex-col gap-4">
+        <div className="md:hidden bg-[#9f0000] border-t border-[#ff0000]">
+          <div className="flex flex-col py-2">
             <Link 
               href={isHomePage ? "#sobre" : "/#sobre"} 
-              className="hover:text-gray-200 transition-colors"
+              className="px-4 py-2 hover:bg-[#8f0000] transition-colors"
               onClick={() => setIsMenuOpen(false)}
             >
               Sobre
             </Link>
             <Link 
               href={isHomePage ? "#menu" : "/#menu"} 
-              className="hover:text-gray-200 transition-colors"
+              className="px-4 py-2 hover:bg-[#8f0000] transition-colors"
               onClick={() => setIsMenuOpen(false)}
             >
               Cardápio
             </Link>
             <Link 
               href="/galeria" 
-              className="hover:text-gray-200 transition-colors"
+              className="px-4 py-2 hover:bg-[#8f0000] transition-colors"
               onClick={() => setIsMenuOpen(false)}
             >
               Galeria
             </Link>
             <Link 
               href={isHomePage ? "#contato" : "/#contato"} 
-              className="hover:text-gray-200 transition-colors"
+              className="px-4 py-2 hover:bg-[#8f0000] transition-colors"
               onClick={() => setIsMenuOpen(false)}
             >
               Contato
             </Link>
             <Link 
               href={isHomePage ? "#contato" : "/#contato"} 
-              className="px-5 py-2 border border-white rounded text-center hover:bg-white hover:text-[#9f0000] transition-colors"
+              className="mx-4 my-2 px-4 py-2 border border-white rounded text-center hover:bg-white hover:text-[#9f0000] transition-colors"
               onClick={() => setIsMenuOpen(false)}
             >
               Agendar Evento

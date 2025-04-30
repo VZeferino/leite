@@ -72,6 +72,16 @@ const MenuFull = () => {
           </div>
           <div className="flex flex-col sm:flex-row gap-4">
             <button 
+              onClick={() => setActiveTab('entradas')}
+              className={`px-6 py-3 text-lg font-bold rounded-lg transition-colors ${
+                activeTab === 'entradas' 
+                  ? 'bg-[#ff0000] text-white' 
+                  : 'bg-gray-800 text-gray-300 hover:bg-gray-700'
+              }`}
+            >
+              Entradas
+            </button>
+            <button 
               onClick={() => setActiveTab('acompanhamentos')}
               className={`px-6 py-3 text-lg font-bold rounded-lg transition-colors ${
                 activeTab === 'acompanhamentos' 
@@ -102,7 +112,7 @@ const MenuFull = () => {
               <div className="mb-8">
                 <h3 className="text-2xl md:text-3xl font-bold mb-4 text-gray-300">Menu Prata</h3>
                 <p className="text-gray-300 text-lg">
-                  Pacote essencial para eventos, incluindo picanha, contrafilé, linguiças, acompanhamentos e toda estrutura necessária.
+                  Pacote essencial para eventos, incluindo picanha, contrafilé, entradas, acompanhamentos e toda estrutura necessária.
                 </p>
               </div>
               
@@ -112,6 +122,7 @@ const MenuFull = () => {
                     title="INCLUSOS"
                     subtitle="Itens incluídos no pacote básico."
                     items={[
+                      { name: "02 ENTRADAS" },
                       { name: "05 ACOMPANHAMENTOS" },
                       { name: "02 RÉCHAUDS" },
                       { name: "CARVÃO" },
@@ -123,15 +134,14 @@ const MenuFull = () => {
                 
                 <div className="space-y-8">
                   <MenuSection 
-                    title="GRELHADOS"
-                    subtitle="Carnes e grelhados incluídos no pacote."
+                    title="CARNES"
+                    subtitle="Carnes incluídas no pacote."
                     items={[
                       { name: "PICANHA" },
-                      { name: "CONTRACOXA DE FRANGO" },
+                      { name: "CONTRAFILÉ" },
                       { name: "LINGUIÇA TOSCANA" },
                       { name: "COXINHA DE FRANGO" },
-                      { name: "ASINHA DE FRANGO" },
-                      { name: "PÃO DE ALHO" }
+                      { name: "ASINHA DE FRANGO" }
                     ]}
                   />
                 </div>
@@ -145,7 +155,7 @@ const MenuFull = () => {
               <div className="mb-8">
                 <h3 className="text-2xl md:text-3xl font-bold mb-4 text-yellow-400">Menu Ouro</h3>
                 <p className="text-gray-300 text-lg">
-                  Experiência premium com picanha premium, variedade de linguiças, acompanhamentos especiais e mais opções para seu evento.
+                  Experiência premium com picanha, variedade de entradas, acompanhamentos especiais e mais opções para seu evento.
                 </p>
               </div>
               
@@ -155,6 +165,7 @@ const MenuFull = () => {
                     title="INCLUSOS"
                     subtitle="Itens incluídos no pacote premium."
                     items={[
+                      { name: "04 ENTRADAS" },
                       { name: "06 ACOMPANHAMENTOS" },
                       { name: "01 ACOMPANHAMENTO ESPECIAL" },
                       { name: "02 RÉCHAUDS" },
@@ -167,17 +178,16 @@ const MenuFull = () => {
                 
                 <div className="space-y-8">
                   <MenuSection 
-                    title="GRELHADOS"
-                    subtitle="Carnes e grelhados incluídos no pacote premium."
+                    title="CARNES"
+                    subtitle="Carnes incluídas no pacote premium."
                     items={[
                       { name: "PICANHA PREMIUM" },
-                      { name: "LINGUIÇA TOSCANA" },
+                      { name: "BIFE ANCHO" },
+                      { name: "FRALDINHA" },
                       { name: "LINGUIÇA CUIABANA" },
-                      { name: "LINGUIÇA APIMENTADA" },
+                      { name: "LINGUIÇA TOSCANA" },
                       { name: "COXINHA DE FRANGO" },
-                      { name: "ASINHA DE FRANGO" },
-                      { name: "PÃO DE ALHO ARTESANAL" },
-                      { name: "QUEIJO COALHO" }
+                      { name: "ASINHA DE FRANGO" }
                     ]}
                   />
                 </div>
@@ -201,10 +211,11 @@ const MenuFull = () => {
                     title="INCLUSOS"
                     subtitle="Itens incluídos no pacote exclusivo."
                     items={[
+                      { name: "06 ENTRADAS" },
                       { name: "06 ACOMPANHAMENTOS" },
                       { name: "03 ACOMPANHAMENTOS ESPECIAIS" },
                       { name: "01 SOBREMESA" },
-                      { name: "01 TEMPERO DO CHEF" },
+                      { name: "02 TEMPEROS DO CHEF" },
                       { name: "02 MOLHOS" },
                       { name: "03 RÉCHAUDS" },
                       { name: "BEBIDAS" },
@@ -217,8 +228,8 @@ const MenuFull = () => {
                 
                 <div className="space-y-8">
                   <MenuSection 
-                    title="GRELHADOS"
-                    subtitle="Carnes nobres e grelhados incluídos no pacote exclusivo."
+                    title="CARNES"
+                    subtitle="Carnes nobres incluídas no pacote exclusivo."
                     items={[
                       { name: "PICANHA ANGUS IMPORTADA" },
                       { name: "CARRÉ DE CORDEIRO" },
@@ -229,6 +240,62 @@ const MenuFull = () => {
                     ]}
                   />
                 </div>
+              </div>
+            </div>
+          )}
+
+          {/* Entradas */}
+          {activeTab === 'entradas' && (
+            <div data-aos="fade-up" data-aos-delay="200">
+              <div className="mb-8">
+                <h3 className="text-2xl md:text-3xl font-bold mb-4 text-[#ff0000]">Entradas</h3>
+                <p className="text-gray-300 text-lg">
+                  Conheça nossas opções de entradas para abrir o apetite antes do prato principal.
+                </p>
+              </div>
+              
+              <div className="space-y-12">
+                <MenuSection 
+                  title="ENTRADAS"
+                  subtitle="Acompanhamentos iniciais para abrir o apetite."
+                  items={[
+                    { name: "LINGUIÇA APIMENTADA" },
+                    { name: "PÃO DE ALHO" },
+                    { name: "QUEIJO COALHO" },
+                    { name: "MILHO GRELHADO" }
+                  ]}
+                />
+
+                <MenuSection 
+                  title="ENTRADAS PREMIUM"
+                  subtitle="*Menus Ouro e Prata podem selecionar opções de entradas desta lista."
+                  items={[
+                    {
+                      name: "PÃO DE ALHO ARTESANAL",
+                      description: "Pão francês, maionese caseira, alho, queijo muçarela e cheiro verde."
+                    },
+                    {
+                      name: "CHORIPÁN",
+                      description: "Pão francês com chimichurri caseiro e linguiça."
+                    },
+                    {
+                      name: "PROVOLETA",
+                      description: "Fatia de provolone grelhada com um toque de mel e pimenta calabresa."
+                    },
+                    {
+                      name: "LINGUIÇA CUIABANA",
+                      description: "Feita com queijo, carne suína e especiarias naturais, é suculenta e deliciosa."
+                    },
+                    {
+                      name: "BRUSCHETTA",
+                      description: "Pão italiano crocante, dourado no azeite, coberto com tomates suculentos, manjericão fresco, parmesão ralado, um toque de balsâmico e azeite extravirgem."
+                    },
+                    {
+                      name: "ESPETINHO DE LEGUMES",
+                      description: "Com cogumelos paris, pimentões, cebola roxa, abobrinha e pêssego, é regado em um tempero especial da casa."
+                    }
+                  ]}
+                />
               </div>
             </div>
           )}
@@ -332,34 +399,11 @@ const MenuFull = () => {
               <div className="mb-8">
                 <h3 className="text-2xl md:text-3xl font-bold mb-4 text-[#ff0000]">Adicionais</h3>
                 <p className="text-gray-300 text-lg">
-                  Complemente seu evento com nossas opções adicionais de molhos, sobremesas, bebidas e opções veganas.
+                  Complemente seu evento com nossas opções adicionais de molhos, sobremesas, bebidas e temperos especiais.
                 </p>
               </div>
               
               <div className="space-y-12">
-                <MenuSection 
-                  title="MENU VEGANO"
-                  subtitle="Em nossa busca de satisfazer cada cliente, montamos um menu com opções veganas que pode ser adicionado a qualquer menu existente."
-                  items={[
-                    {
-                      name: "ESPETINHO DE LEGUMES",
-                      description: "Com cogumelos paris, pimentões, cebola roxa, abobrinha e abacaxi, é regado em um tempero especial da casa."
-                    },
-                    {
-                      name: "MILHO TORRADO",
-                      description: "Torrado, crocante e delicioso, é regado na manteiga antes de servir."
-                    },
-                    {
-                      name: "REPOLHO NA MANTEIGA",
-                      description: "Macio por dentro e tostado por fora."
-                    },
-                    {
-                      name: "FATIAS DE BERINJELA",
-                      description: "Deixada no sal para tirar o amargor e depois grelhada com limão, sal e ervas."
-                    }
-                  ]}
-                />
-
                 <MenuSection 
                   title="MOLHOS ESPECIAIS"
                   subtitle="Molhos especiais para realçar o sabor das carnes."
@@ -411,6 +455,40 @@ const MenuFull = () => {
                 />
 
                 <MenuSection 
+                  title="TEMPEROS DO CHEF"
+                  subtitle="Para clientes que desejam adicionar um toque sofisticado ao evento, oferecemos temperos escolhidos a dedo pelo Chef João Leite, com sabores inesquecíveis."
+                  items={[
+                    {
+                      name: "FRANGO JAMAICANO",
+                      description: "Marinado com especiarias caribenhas e levemente apimentado, denota uma experiência inesquecível."
+                    },
+                    {
+                      name: "COSTELINHA DE PORCO BARBECUE",
+                      description: "Temperada com especiarias e finalizada em um molho agridoce, é o autêntico toque do American BBQ."
+                    },
+                    {
+                      name: "CORAÇÃO DE FRANGO NA CERVEJA",
+                      description: "Marinado na cerveja, alho, azeite e limão."
+                    },
+                    {
+                      name: "PICANHA AO ALHO",
+                      description: "Finalizada no molho maçaricado de alho, manteiga, parmesão e azeite, é a Rainha das carnes com o sabor clássico de churrascaria.",
+                      note: "**Disponível apenas nos Menus Ouro e Platina."
+                    },
+                    {
+                      name: "CARRÉ DE CORDEIRO COM CHIMICHURRI DE HORTELÃ",
+                      description: "Uma variação do tradicional chimichurri para combinar perfeitamente com o cordeiro.",
+                      note: "**Disponível apenas no Menu Platina."
+                    },
+                    {
+                      name: "CARRÉ DE CORDEIRO NO MOLHO DE ALHO, LIMÃO E ERVAS",
+                      description: "Um molho composto de iogurte grego, limão siciliano, páprica defumada e ervas frescas, é uma bomba de sabor cremosa e adocicada.",
+                      note: "**Disponível apenas no Menu Platina."
+                    }
+                  ]}
+                />
+
+                <MenuSection 
                   title="MENU BEBIDAS"
                   subtitle="Oferecemos a possibilidade de incluir bebidas em qualquer um dos Menus, com direito a copos descartáveis, gelo e garçons para servir os convidados."
                   items={[
@@ -432,12 +510,14 @@ const MenuFull = () => {
           <p className="text-xl text-gray-300 mb-6">
             Entre em contato conosco para solicitar um orçamento personalizado para seu evento!
           </p>
-          <Link 
-            href={getPath("/#contato")} 
+          <a 
+            href="https://api.whatsapp.com/send/?phone=5511912884404&text=Oi%21+Quero+fazer+um+evento+com+voc%C3%AA&type=phone_number&app_absent=0" 
+            target="_blank" 
+            rel="noopener noreferrer"
             className="inline-block px-8 py-4 text-xl font-bold text-white bg-[#ff0000] hover:bg-[#cc0000] rounded-lg transition-colors"
           >
             Solicitar Orçamento
-          </Link>
+          </a>
         </div>
       </div>
     </section>
