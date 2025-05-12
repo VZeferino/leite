@@ -267,7 +267,7 @@ const MenuFull = () => {
 
                 <MenuSection 
                   title="ENTRADAS PREMIUM"
-                  subtitle="*Menus Ouro e Prata podem selecionar opções de entradas desta lista."
+                  subtitle="*Menus Ouro e Platina podem selecionar opções de entradas desta lista."
                   items={[
                     {
                       name: "PÃO DE ALHO ARTESANAL",
