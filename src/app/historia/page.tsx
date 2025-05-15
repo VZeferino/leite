@@ -25,7 +25,7 @@ export default function HistoriaPage() {
             {/* Versão desktop do texto */}
             <div className="hidden md:block text-xl text-gray-300 max-w-4xl mx-auto space-y-4">
               <p className="text-justify">
-                Fundado em 2024, o Dragon Kiss conta com uma equipe de profissionais apaixonados pela arte da cozinha, com anos de experiência em serviços de catering, buffet e churrasco, atendendo São Paulo e região.
+                Fundado em 2025, o Dragon Kiss conta com uma equipe de profissionais apaixonados pela arte da cozinha, com anos de experiência em serviços de catering, buffet e churrasco, atendendo São Paulo e região.
               </p>
               <p className="text-justify">
                 Nosso Chef João Leite combina técnicas clássicas e modernas, inspirando-se em tradições culinárias de todo o mundo. Sua paixão pela arte culinária se reflete em pratos que unem sabor, criatividade e autenticidade.
