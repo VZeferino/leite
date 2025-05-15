@@ -29,7 +29,7 @@ const Hero = () => {
             O &ldquo;BEIJO DO DRAGÃO&rdquo;
           </h2>
           <p className="text-lg md:text-xl mb-8 max-w-2xl text-justify" data-aos="fade-up" data-aos-delay="300">
-            Experimente o verdadeiro sabor da brasa em cortes selecionados, preparados com técnicas únicas que ressaltam o melhor de cada ingrediente.
+            Experimente o verdadeiro sabor da brasa em cortes selecionados, preparados com técnicas maravilhosas que ressaltam o melhor de cada ingrediente.
           </p>
           <div className="flex flex-col sm:flex-row gap-4" data-aos="fade-up" data-aos-delay="400">
             <Link 
