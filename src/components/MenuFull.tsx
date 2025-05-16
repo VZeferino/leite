@@ -409,7 +409,7 @@ const MenuFull = () => {
                   items={[
                     {
                       name: "MOLHO BÉARNAISE",
-                      description: "Cremoso e aromático, com um toque de estragão e vinagre de vinho tinto, perfeito para realçar a carne grelhada."
+                      description: "Cremoso e aromático, com um toque de erva-doce e vinagre de vinho tinto, perfeito para realçar a carne grelhada."
                     },
                     {
                       name: "MOLHO BORDELAISE",
