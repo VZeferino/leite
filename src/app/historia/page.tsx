@@ -18,7 +18,7 @@ export default function HistoriaPage() {
             {/* Versão mobile do texto */}
             <div className="md:hidden text-lg text-gray-300 max-w-4xl mx-auto space-y-4">
               <p className="text-justify">
-                O Dragon Kiss nasceu em 2024, trazendo a São Paulo uma nova experiência em churrasco. Sob o comando do Chef João Leite, combinamos técnicas clássicas e modernas para criar momentos únicos em cada evento.
+                O Dragon Kiss nasceu em 2025, trazendo a São Paulo uma nova experiência em churrasco. Sob o comando do Chef João Leite, combinamos técnicas clássicas e modernas para criar momentos únicos em cada evento.
               </p>
             </div>
 
@@ -90,10 +90,10 @@ export default function HistoriaPage() {
               {/* Versão mobile */}
               <div className="md:hidden bg-gray-800 p-6 rounded-lg space-y-4">
                 <p className="text-gray-300 text-justify">
-                  Tudo começou em 2022, com um churrasco especial para amigos. O que era uma paixão se transformou em missão: criar experiências gastronômicas memoráveis através do nosso método único, o "Beijo do Dragão".
+                  Tudo começou em 2023, com um churrasco especial para amigos. O que era uma paixão se transformou em missão: criar experiências gastronômicas memoráveis através do nosso método único, o "Beijo do Dragão".
                 </p>
                 <p className="text-gray-300 text-justify">
-                  Em 2024, essa paixão virou negócio, e desde então servimos centenas de pessoas, mantendo sempre o mesmo padrão de qualidade que nos tornou conhecidos.
+                  Em 2025, essa paixão virou negócio, e desde então servimos centenas de pessoas, mantendo sempre o mesmo padrão de qualidade que nos tornou conhecidos.
                 </p>
               </div>
 
@@ -109,7 +109,7 @@ export default function HistoriaPage() {
                   Comecei a receber pedidos de amigos e familiares para organizar eventos similares. Cada vez mais, desenvolvia técnicas para criar o que chamei de "Beijo do Dragão" - um método de preparo que combina temperatura, tempo e temperos especiais.
                 </p>
                 <p className="text-gray-300 text-justify">
-                  Em 2024, decidi transformar essa paixão em um negócio. A Dragon Kiss nasceu oficialmente, e desde então, temos servido centenas de pessoas em eventos de todos os tamanhos, sempre mantendo a mesma qualidade e atenção aos detalhes que nos tornou conhecidos.
+                  Em 2025, decidi transformar essa paixão em um negócio. A Dragon Kiss nasceu oficialmente, e desde então, temos servido centenas de pessoas em eventos de todos os tamanhos, sempre mantendo a mesma qualidade e atenção aos detalhes que nos tornou conhecidos.
                 </p>
               </div>
             </div>
