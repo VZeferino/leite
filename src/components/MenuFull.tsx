@@ -412,6 +412,10 @@ const MenuFull = () => {
                   subtitle="Molhos especiais para realçar o sabor das carnes."
                   items={[
                     {
+                      name: "MOLHO CHIMICHURRI",
+                      description: "Molho tradicional argentino com salsinha, alho, orégano, vinagre, azeite e uma sutil picância, é o acompanhamento perfeito para carnes."
+                    },
+                    {
                       name: "MOLHO BÉARNAISE",
                       description: "Cremoso e aromático, com um toque de erva-doce e vinagre de vinho tinto, perfeito para realçar a carne grelhada."
                     },
@@ -426,10 +430,6 @@ const MenuFull = () => {
                     {
                       name: "GELEIA DE ABACAXI COM PIMENTA",
                       description: "Abacaxi e pimenta se casam em um doce de tirar o fôlego."
-                    },
-                    {
-                      name: "CHIMICHURRI",
-                      description: "Molho tradicional argentino com salsinha, alho, orégano, vinagre, azeite e uma sutil picância, é o acompanhamento perfeito para carnes."
                     }
                   ]}
                 />
